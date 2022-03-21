@@ -1,0 +1,21 @@
+/* 重写bufferfly-dag的默认样式 */
+.task-designer-wrap {
+  .butterflies-link {
+    stroke-width: 2px;
+    stroke: #3054eb;
+  }
+
+  .butterflies-arrow {
+    fill: #3054eb;
+    stroke: #3054eb;
+    stroke-width: 2px;
+  }
+
+  .butterflie-circle-endpoint {
+    cursor: pointer;
+
+    &.linkable {
+      background: #3054eb;
+    }
+  }
+}

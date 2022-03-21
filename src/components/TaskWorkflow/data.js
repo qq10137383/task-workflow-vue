@@ -1,5 +1,5 @@
 import Node from './node';
-import Edge from './edge';
+import { Edge } from 'butterfly-dag/pack';
 
 const data = {
   nodes: [
