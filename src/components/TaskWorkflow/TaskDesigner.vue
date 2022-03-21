@@ -92,7 +92,7 @@ export default {
         label: "1234",
         layers: [{}],
         enableSymbol: true,
-        enableSkip: true
+        enableSkip: true,
       });
       console.log(node);
     },
@@ -126,7 +126,7 @@ export default {
         enableSymbol: true,
         skipSymbol: true,
         status: "success",
-        Class: Node,
+        Class: Node
       };
       this.canvas.addNode(node);
     },

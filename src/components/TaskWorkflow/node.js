@@ -139,7 +139,7 @@ class BaseNode extends Node {
   updateNode(data) {
     this._updateBody(data)
     this._updateFooter(data)
-    this.__updateEndpoints(data)
+    this._updateEndpoints()
   }
 
   _updateBody(data) {
@@ -171,8 +171,35 @@ class BaseNode extends Node {
       .end()
   }
 
-  _updateEndpoints(data) {
-    console.log(data)
+  _updateEndpoints() {
+    const { endpoints } = this
+
+    // 防止节点大小发生改变需要更新瞄点位置
+    if (endpoints.length) {
+      endpoints.forEach(point => point.updatePos())
+      return
+    }
+    // 新增左右上下4个瞄点
+    this.addEndpoint({
+      id: "top",
+      orientation: [0, -1],
+      pos: [0.5, 0],
+    });
+    this.addEndpoint({
+      id: "right",
+      orientation: [1, 0],
+      pos: [0, 0.5],
+    });
+    this.addEndpoint({
+      id: "bottom",
+      orientation: [0, 1],
+      pos: [0.5, 0],
+    });
+    this.addEndpoint({
+      id: "left",
+      orientation: [-1, 0],
+      pos: [0, 0.5],
+    });
   }
 }
 
